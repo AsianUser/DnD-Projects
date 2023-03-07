@@ -1,0 +1,45 @@
+
+public class TestBST {
+	
+	void fillListsWithData(MyBST bst, Comparable[] list) {
+		for (Comparable c : list) {
+			bst.add(c) ;
+		}
+	}
+	
+	public static void main (String [] args)
+	{
+		MyBST<String> bst = new MyBST<String>();
+		
+		String[] strings = {"Ahren", "Asher", "Markus", "Gabe", "Chase", "Allie", "Alexandra",
+				"Wyatt", "Alex", "Natalie", "Aidan", "Kian", "Sammy", "Andrew", 
+				"Samantha", "Ryan", "Derek", "Micah", "Chris", "Megan", "Mark", "Aidan", "Aaron",
+				"Will", "Jake", "Ryan", "Grady", "Ben", "Ronan", "Claire", "Sophia"};
+		
+		bst.add("a") ;
+		bst.add("i") ;
+		bst.add("h") ;
+		bst.add("g") ;
+		bst.add("e") ;
+		bst.add("f") ;
+//		System.out.println (bst.add(6)) ;
+		
+		System.out.println (bst) ;
+		
+//		System.out.println(bst.remove(3));
+//		System.out.println (bst) ;
+		System.out.println (bst.contains("g")) ;
+		System.out.println(bst.remove("g"));
+		System.out.println (bst) ;
+		System.out.println(bst.remove("g"));
+		System.out.println (bst) ;
+//		System.out.println(bst.remove(0));
+//		System.out.println (bst) ;
+//		System.out.println(bst.remove(6));
+//		System.out.println (bst) ;
+//		System.out.println(bst.remove(8));
+		System.out.println(bst.remove("a"));
+		
+		System.out.println (bst) ;
+	}
+}

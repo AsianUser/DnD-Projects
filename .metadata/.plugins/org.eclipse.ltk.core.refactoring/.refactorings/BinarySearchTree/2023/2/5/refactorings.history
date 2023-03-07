@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;nodePrev&apos; in &apos;MyBST.removeHelper(...)&apos; to &apos;parent&apos;&#x0D;&#x0A;- Original project: &apos;BinarySearchTree&apos;&#x0D;&#x0A;- Original element: &apos;MyBST.removeHelper(E).nodePrev&apos;&#x0D;&#x0A;- Renamed element: &apos;nodePrev&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;nodePrev&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{MyBST.java[MyBST~removeHelper~QE;@nodePrev!2377!2431!2392!2399!QBinaryNode\&lt;QE;&gt;;!0!false" name="parent" references="true" stamp="1675448976327" version="1.0"/>
+</session>

@@ -1,0 +1,37 @@
+
+public class TestBST {
+	
+	public static void fillListsWithData(MyBST bst, Comparable[] list) {
+		for (Comparable c : list) {
+			bst.add(c) ;
+		}
+	}
+	
+	public static void main (String [] args)
+	{
+		MyBST<Integer> bst = new MyBST<Integer>();
+		
+		Integer[] ints = {3,9,7,5,4,10,5,6,2,1,8};
+		
+		String[] strings = {"Ahren", "Asher", "Markus", "Gabe", "Chase", "Allie", "Alexandra",
+				"Wyatt", "Alex", "Natalie", "Aidan", "Kian", "Sammy", "Andrew", 
+				"Samantha", "Ryan", "Derek", "Micah", "Chris", "Megan", "Mark", "Aidan", "Aaron",
+				"Will", "Jake", "Ryan", "Grady", "Ben", "Ronan", "Claire", "Sophia"};
+		
+		fillListsWithData(bst, ints) ;
+//		System.out.println (bst.add(6)) ;
+		
+		System.out.println(bst.getRoot()) ;
+		System.out.println (bst.remove(ints[ints.length-1]));
+		System.out.println(bst) ;
+		System.out.println(bst.getRoot());
+		System.out.println(bst.remove(ints[4]));
+		System.out.println(bst) ;
+		System.out.println((bst.getRoot()));
+		System.out.println(bst.remove(ints[0]));
+		System.out.println(bst) ;
+		System.out.println(bst.getRoot());	
+		
+		System.out.println(bst) ;
+	}
+}
