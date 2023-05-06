@@ -64,6 +64,60 @@ public class HuffmanDecoder {
 		}
 	}
 	
+	public void decodeFile (String encodedFile)
+	{
+		if (!encodedFile.substring(encodedFile.length()-5).equals (".huf"))
+		{
+			throw new IllegalArgumentException ("not a .huf");
+		}
+	
+		try {
+			BufferedReader buffReader = new BufferedReader (new FileReader (encodedFile));
+			PrintWriter pWrite = new PrintWriter(encodedFile.substring(0, encodedFile.length()-4)); // un .huf-ify
+	
+			int current=0;
+			int next=0;
+			// if not empty
+			if (buffReader.ready())
+			{
+				current = buffReader.read();
+			}
+			// main code
+			while (buffReader.ready())
+			{
+				next = buffReader.read();
+	
+				// if end of file
+				if ((char)next != '0' && (char)next != '1')
+				{
+					String str = Integer.toString (current);
+					str.substring(0,(8-Character.getNumericValue(next)));
+					
+					pWrite.write (str);
+				}
+				// int to str
+				else
+				{
+					pWrite.write (current);
+				}
+	
+				current = next;
+			}
+			// deal with remainder
+	
+			
+			buffReader.close();
+			pWrite.close();
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			System.out.println ("bruh" + e);
+		}
+	
+	}
+
+
+
 	public boolean isCode (String binary) // trace tree
 	{
 		Node root = huffCode;
