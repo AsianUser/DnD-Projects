@@ -63,39 +63,48 @@ public class HuffmanEncoder {
 	}
 
 	public void encodeFile (String fileToCompress)
-	{
-		try
-		{
-			BufferedReader buffReader = new BufferedReader (new FileReader (fileToCompress));
-			PrintWriter pWrite = new PrintWriter(fileToCompress + ".huf");
-			
-			String str = "";
+{
+    try {
+        BufferedReader buffReader = new BufferedReader (new FileReader (fileToCompress));
+        PrintWriter pWrite = new PrintWriter(fileToCompress + ".huf");
 
-			while (buffReader.ready())
-			{
-				int k = buffReader.read();
-				str += (char) k;
-				if (str.length() == 8)
-				{
-					pWrite.write((char) Integer.parseInt(str));
-					str = "";
-				}
-			}
-			// if str is less 
-			
-			if (str.length() < 8)
-			{
-				
-			}
+        int charCount = 0;
+        String str = "";
 
+        while (buffReader.ready())
+        {
+            Character chara = (char) buffReader.read();
+            
+            charCount ++;
+            str = str + chara;
 
-			buffReader.close();
-			pWrite.close();
-		}
-		catch (Exception e)
-		{
-			System.out.println ("bruh");
-		}
-	}
+            if (charCount == 8)
+            {
+                // str to int
+                // int to char
+                Character printChar = (char) Integer.parseInt (str);
+                pWrite.print (printChar);
+                str = "";
+                charCount = 0;
+            }
+
+        }
+
+        // deal with remainder
+        for (int j = 0 ; j < 8-charCount ; j ++)
+        {
+            str = str + "0";
+        }
+        pWrite.write (8-charCount);
+        
+
+        buffReader.close();
+        pWrite.close();
+    }
+    catch (Exception e) {
+        // TODO: handle exception
+        System.out.println ("bruh" + e);
+    }
+}
 
 }
